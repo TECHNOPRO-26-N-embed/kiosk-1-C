@@ -2,7 +2,7 @@
 
 
 
-float buy_scene()
+float *buy_scene()
 {
 
 

@@ -4,7 +4,7 @@
 int sceneNumber=0;
 char SceneName[64]={};
 
-void chash_Scene()
+void *chash_Scene()
 {
 printf("========================= メニュー =========================\n");
 printf("\n");
@@ -36,5 +36,5 @@ return SceneName;
 }
 
 void receipt () {
-purintf("");
+printf("");
 }

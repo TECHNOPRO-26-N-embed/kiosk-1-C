@@ -3,7 +3,7 @@
 int sceneNumber=0;//ここはシーンが何番に移行するのかを記憶する変数
 char SceneName[64]={};//シーンの名前の受け渡しに使う変数
 
-void age_Chack_Scene()
+void *age_Chack_Scene()
 {
 int age=0;
 printf("========================= メニュー =========================\n");
@@ -13,7 +13,7 @@ printf("年齢確認画面\n");
 
 printf("お酒・タバコが含まれています。\n");
 
-printf("1:はい(18歳以上)  2:いいえ(18歳未満)\n");
+printf("1:はい(18歳以上) 2:いいえ(18歳未満)\n");
 
 printf("\n");
 printf("=============================================================\n");
@@ -50,7 +50,7 @@ scanf("%d",&sceneNumber);
 
 if(sceneNumber==1)
 {
-SceneName[64]="Buy_Check";//ここでシーンの名前を入れる
+strcpy(SceneName, "Buy_Check");//ここでシーンの名前を入れる
 }
 else if(sceneNumber==2)
 {

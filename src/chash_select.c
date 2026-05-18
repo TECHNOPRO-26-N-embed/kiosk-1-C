@@ -6,7 +6,7 @@ int cardNumber=2;
 int payNumber=5;
 char SceneName[64]={};
 
-void start_Scene(){
+void *start_Scene(){
 printf("========================= メニュー =========================\n");
 printf("お支払い方法を選択してください\n");
 printf("1:現金\n");
