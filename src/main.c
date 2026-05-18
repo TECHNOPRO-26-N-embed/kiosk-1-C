@@ -1,48 +1,27 @@
 #include <stdio.h>
+#include <string.h>
+
+#include"buy_Chack.c"
+#include"age_Chack.c"
+#include"chash_Chack.c"
+#include"chash_select.c"
+#include "point.c"
+#include"pos_Code.c
 #include"start.c"
-int sceneNumber=0;
-
-int sceneChanger(int scene)
-{
-
-    sceneNumber=scene;
-
-    return scene;
-
-}
+char ret[64]={};//シーンの名前の受け渡しに使う変数
 
 int main(void) {
-printf("========================= メニュー =========================\n");
-printf("\n\n\n\n\n");
+    
+   ret[64]=start_Scene();//シーンの名前を受け取る
+
+
+   if(strcmp(ret,"Buy_Check")==0)
+   {
+       printf("Buy_Checkに移行します");
+   }
 
 
 
-printf("1: 読み取り画面へ\t\t\t");
-printf("0: 終了");
-
-
-
-printf("\n");
-printf("=============================================================\n");
-
-printf("番号を入力\t:\t");
-scanf("%d",&sceneNumber);
-
-
-
-switch(sceneNumber)
-{
-    case 1:
-    action();
-    break;
-    case 9:
-    printf("終了します\n");
-    break;
-    default:
-    printf("無効な選択です\n");     
-
-
-}
 
 return 0;
 
