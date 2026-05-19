@@ -2,13 +2,15 @@
 #include <stdio.h>
 
 
-char SceneName[64]={};//シーンの名前の受け渡しに使う変数
+
 
 
 char *start_Scene()
 {
+       
     int sceneNumber=0;//ここはシーンが何番に移行するのかを記憶する変数
     //表示部分
+    printf("スタート画面\n");
     printf("========================= メニュー =========================\n");
     printf("\n\n\n\n\n");
 
@@ -16,7 +18,7 @@ char *start_Scene()
 
 
 
-
+    printf("[1]読み込み画面へ\t\t[0]管理者画面へ");
     printf("\n");
     printf("=============================================================\n");
 
@@ -26,11 +28,19 @@ char *start_Scene()
 
     if(sceneNumber==1)
     {
-        strcpy(SceneName, "Buy_Check");//ここでシーンの名前を入れる
+        return "Buy_Check";//ここでシーンの名前を入れる
+    }
+    else if(sceneNumber==0)
+    {
+        return "";
+    }
+    else
+    {
+        printf("無効な選択です\n");
     }
   
 
 
-    return SceneName;//シーンの名前を返す
+    return "Start";//シーンの名前を返す
 }
 

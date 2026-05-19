@@ -1,40 +1,42 @@
-#include <stdio.h>
+// #include <stdio.h>
 
 
-int sceneNumber=0;
-char SceneName[64]={};
 
-void *chash_Scene()
-{
-printf("========================= メニュー =========================\n");
-printf("\n");
-ptintf("金額を入力してください");
-printf("\n");
-printf("=============================================================\n");
 
-float m = 0;
-scanf("%f", &m);
 
-if ( m == total()) {
-printf("お買い上げありがとうございました");
-receipt;
-}
-else if ( m > total()) {
+// void *chash_Scene()
+// {
+// int sceneNumber=0;
+// static char SceneName[64]={};
+// printf("========================= メニュー =========================\n");
+// printf("\n");
+// printf("金額を入力してください");
+// printf("\n");
+// printf("=============================================================\n");
 
-}
-else if (m < total()) {
+// float m = 0;
+// scanf("%f", &m);
 
-}
+// if ( m == total()) {
+// printf("お買い上げありがとうございました");
+// //receipt;
+// }
+// else if ( m > total()) {
 
-if(sceneNumber==1)
-{
-char SceneName[]="Buy_Chaeck";
-}
+// }
+// else if (m < total()) {
 
-return SceneName;
+// }
 
-}
+// if(sceneNumber==1)
+// {
+// char SceneName[]="Buy_Chaeck";
+// }
 
-void receipt () {
-printf("");
-}
+// return SceneName;
+
+// }
+
+// void receipt () {
+// printf("");
+// }
