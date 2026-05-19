@@ -573,3 +573,46 @@ typedef struct {
 - 支払方法未選択時の確定拒否。
 - 年齢確認対象商品がある会計で未確認拒否。
 - 履歴保存/再読込の一致。
+
+
+
+セルフレジの要件から、実装すべき主な関数・ファイル構成例を示します。
+
+【主なファイル構成例】
+
+src/main.c（メインループ・全体制御）
+src/product.c / product.h（商品情報の管理・検索・登録）
+src/payment.c / payment.h（支払い処理・支払い方法選択）
+src/receipt.c / receipt.h（レシート発行・表示）
+src/history.c / history.h（購入履歴の保存・表示）
+src/age_check.c / age_check.h（年齢確認処理）
+point.c / point.h（ポイントカード処理）
+csv.c / csv.h（CSV入出力共通処理）
+admin.c / admin.h（管理者画面・従業員認証）
+【主な関数例】
+
+main_menu()：メインメニュー表示・選択
+read_product()：商品読み取り（バーコード/カテゴリ）
+select_payment_method()：支払い方法選択
+process_payment()：支払い処理（現金/クレジット/バーコード/ポイント）
+print_receipt()：レシート出力
+save_history()：購入履歴保存（CSV等）
+show_history()：購入履歴表示
+check_age()：年齢確認
+handle_point_card()：ポイントカード処理
+admin_menu()：管理者メニュー
+input_csv()
+
+
+
+セルフレジの実装順おすすめは以下の通りです。
+
+データ構造の設計（商品情報、購入情報、履歴などのstruct定義）
+商品情報の読み取り・管理（バーコード/カテゴリ入力、商品検索）
+メインメニュー・画面遷移の骨組み（main.c、メニュー表示・選択）
+支払い方法選択・支払い処理（現金/クレジット/ポイント等の分岐）
+レシート出力・購入履歴保存（CSV出力、履歴表示）
+年齢確認・ポイントカード処理（必要な場合の分岐・入力）
+管理者機能（管理者認証、履歴閲覧など）
+エラーハンドリング・入力チェック
+画面表示の調整・細部のUI改善
