@@ -1,15 +1,12 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
-// admin.h: 管理者画面・認証用関数定義
+// 必要なインクルード
+#include <stdio.h>
 
-// 管理者メニュー画面のプロトタイプ
-void admin_menu(void);
-
-// 従業員コード入力画面のプロトタイプ
+// 管理者メニュー関連の関数プロトタイプ
 void admin_login_prompt(void);
-
-// 商品管理メニュー
+void admin_menu(void);
 void product_management_menu(void);
 
 #endif // ADMIN_H
