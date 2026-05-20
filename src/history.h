@@ -1,5 +1,3 @@
-#ifndef HISTORY_H
-#define HISTORY_H
 
 #ifndef HISTORY_H
 #define HISTORY_H

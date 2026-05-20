@@ -6,4 +6,7 @@
 // 管理者メニュー画面のプロトタイプ
 void admin_menu(void);
 
+// 従業員コード入力画面のプロトタイプ
+void admin_login_prompt(void);
+
 #endif // ADMIN_H

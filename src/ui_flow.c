@@ -24,7 +24,7 @@ void main_menu(void) {
 		scan_screen();
 	} else if (sel == 9) { // 管理者メニューへ
 		printf("管理者メニューに遷移\n");
-		admin_menu();
+		admin_login_prompt();
 	} else { // その他は無効
 		printf("無効な入力です。\n");
 		main_menu();
