@@ -4,13 +4,35 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+<<<<<<< HEAD
 // 商品マスタを初期化
 ResultCode init_product_master(ProductMaster* master) {
     if (!master) return RC_ERR;
+=======
+// product.c: 商品情報管理の実装
+// 商品マスタの初期化や商品登録・検索などを担当
+
+// 商品マスタ初期化
+<<<<<<< Updated upstream
+// master: 商品マスタ構造体へのポインタ
+void init_product_master(ProductMaster* master) {
+    if (!master) return;
+=======
+ResultCode init_product_master(ProductMaster* master) {
+    if (!master) return RC_ERR;
+>>>>>>> Stashed changes
+>>>>>>> ed7b3d0161570463a56c34c7194c1e8ac6657156
     master->product_count = 0;
     memset(master->products, 0, sizeof(master->products));
     memset(master->barcode_index, 0, sizeof(master->barcode_index));
     return RC_OK;
+<<<<<<< HEAD
+=======
+}
+
+ResultCode clear_product_master(ProductMaster* master) {
+    return init_product_master(master);
+>>>>>>> ed7b3d0161570463a56c34c7194c1e8ac6657156
 }
 
 // 商品マスタをクリア（初期化と同じ動作）

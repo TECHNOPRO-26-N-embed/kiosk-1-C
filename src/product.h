@@ -1,7 +1,21 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
+<<<<<<< HEAD
 #include "error.h"
+=======
+<<<<<<< Updated upstream
+// product.h: 商品情報の管理用ヘッダ
+// 商品情報の構造体定義や商品マスタ管理用の構造体を提供
+=======
+#include "error.h"
+
+#define MAX_PRODUCTS 5000
+#define MAX_NAME_LEN 64
+#define MAX_BARCODE_LEN 14
+#define MAX_CATEGORY 100
+>>>>>>> Stashed changes
+>>>>>>> ed7b3d0161570463a56c34c7194c1e8ac6657156
 
 // 最大商品数・文字長などの定義
 #define MAX_PRODUCTS 5000
@@ -28,6 +42,7 @@ typedef struct {
 } ProductMaster;
 
 // 商品マスタ初期化・クリア
+<<<<<<< HEAD
 ResultCode init_product_master(ProductMaster* master); // 商品マスタを初期化
 ResultCode clear_product_master(ProductMaster* master); // 商品マスタをクリア
 
@@ -56,3 +71,46 @@ ResultCode load_products_from_file(ProductMaster* master, const char* path, int*
 ResultCode save_products_to_file(const ProductMaster* master, const char* path, ErrorCode* out_error); // CSV書出
 
 #endif // PRODUCT_H
+=======
+ResultCode init_product_master(ProductMaster* master);
+ResultCode clear_product_master(ProductMaster* master);
+
+// 商品検証
+ResultCode validate_product(const Product* product, ErrorCode* out_error);
+int validate_tax_rate(int tax_rate);
+int validate_barcode(const char* barcode);
+
+// 商品登録・存在確認
+ResultCode register_product(ProductMaster* master, const Product* product, ErrorCode* out_error);
+int exists_product_id(const ProductMaster* master, int product_id);
+int exists_barcode(const ProductMaster* master, const char* barcode);
+
+// 商品検索
+Product* find_product_by_id(ProductMaster* master, int product_id);
+const Product* find_product_by_id_const(const ProductMaster* master, int product_id);
+Product* find_product_by_barcode(ProductMaster* master, const char* barcode);
+const Product* find_product_by_barcode_const(const ProductMaster* master, const char* barcode);
+
+// 一覧・更新
+ResultCode list_products_by_category(
+    const ProductMaster* master,
+    int category_id,
+    Product* out_list,
+    int out_cap,
+    int* out_count,
+    ErrorCode* out_error
+);
+ResultCode update_product_tax_rate(ProductMaster* master, const char* barcode, int new_tax_rate, ErrorCode* out_error);
+
+// CSV入出力
+ResultCode load_products_from_file(
+    ProductMaster* master,
+    const char* path,
+    int* out_loaded,
+    int* out_skipped,
+    ErrorCode* out_error
+);
+ResultCode save_products_to_file(const ProductMaster* master, const char* path, ErrorCode* out_error);
+
+#endif // PRODUCT_H
+>>>>>>> ed7b3d0161570463a56c34c7194c1e8ac6657156
