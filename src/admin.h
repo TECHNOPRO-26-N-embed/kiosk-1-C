@@ -9,4 +9,7 @@ void admin_menu(void);
 // 従業員コード入力画面のプロトタイプ
 void admin_login_prompt(void);
 
+// 商品管理メニュー
+void product_management_menu(void);
+
 #endif // ADMIN_H
