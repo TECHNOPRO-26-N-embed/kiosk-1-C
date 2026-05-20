@@ -1,3 +1,5 @@
+
+// point.h: ポイントカード情報の定義
 #ifndef POINT_H
 #define POINT_H
 
